@@ -16,7 +16,7 @@
   <hr /><br /><br />
 
   <hr /><br /><br />
-  
+
   <%
     if @events.length > 0
       i = 0
@@ -29,7 +29,7 @@
         <% end %>
 
         <div class="col-xs-4 event-box">
-          <%= event.start %>
+          <%= event.start.strftime("%B %Y") %>
           <%= raw event.body %>
         </div>
         <%
