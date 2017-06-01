@@ -3,8 +3,16 @@
 <head>
 </head>
 <body>
+  <h3>Event properties</h4>
+  <%= @events[0] %>
+  <hr /><br /><br />
+
+  
   <% @events.each do |event| %>
-    <%= event.subject %>
+    <dt><%= event.subject %></dt>
+    <dd>
+      <strong>Start: </strong><%= event.start %>
+    </dd>
   <% end %>
 
 </body>
