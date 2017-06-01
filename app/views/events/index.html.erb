@@ -1,30 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <style type="text/css">
+    a.display-event, a.display-event:visited {
+      color: #00F;
+    }
+  </style>
 </head>
 <body>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('a.display-event').on('click', function(e) {
+        e.preventDefault();
+
+        var id = $(this).data('body-id');
+        $('#event-body-' + id).toggle();
+      });
+    });
+  </script>
   <h3>Event properties</h4>
   <%= @events[0] %>
   <hr /><br /><br />
 
-  <h3>Folder properties</h4>
-  <%= @folders[0] %>
   <hr /><br /><br />
-
-  <h3>Folders</h3>
-  <%= @folders.each do |folder| %>
-    <dt><%= folder.name %></dt>
+  <%
+    i = 0
+    @events.each do |event|
+   %>
+    <dt>
+      <a href="#" class="display-event" data-body-id="<%= i %>"><%= event.subject %></a>
+    </dt>
     <dd>
+      <div style="display: none" id="event-body-<%= i %>">
+        <%= raw event.body %>
+      </div>
     </dd>
-  <% end %>
 
-  <hr /><br /><br />
-  <% @events.each do |event| %>
-    <dt><%= event.subject %></dt>
-    <dd>
-      <strong>Start: </strong><%= event.start %>
-    </dd>
-  <% end %>
+  <%
+    i += 1
+  end
+  %>
 
 </body>
 </html>
