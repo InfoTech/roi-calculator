@@ -7,18 +7,10 @@ class EventsController < ApplicationController
   protect_from_forgery with: :exception
 
 
-  def show
-    # https://makandracards.com/makandra/27443-interacting-with-a-microsoft-exchange-server-from-ruby
+  def index
+    calendar = get_calendar
+    @folders = get_folders
 
-
-    endpoint = 'https://webmail.infotech.com/ews/Exchange.asmx'
-    user = Rails.application.secrets.exchange_username
-    pass = Rails.application.secrets.exchange_password
-
-    client = Viewpoint::EWSClient.new(endpoint, user, pass, http_opts: {ssl_verify_mode: 0})
-
-
-    calendar = client.get_folder(:calendar)
 
     @events = []
 
@@ -28,8 +20,33 @@ class EventsController < ApplicationController
 
       @events << item
     end
+  end
 
+  def create
 
+  end
+
+  private
+  def get_calendar
+    # https://makandracards.com/makandra/27443-interacting-with-a-microsoft-exchange-server-from-ruby
+    endpoint = 'https://webmail.infotech.com/ews/Exchange.asmx'
+    user = Rails.application.secrets.exchange_username
+    pass = Rails.application.secrets.exchange_password
+
+    client = Viewpoint::EWSClient.new(endpoint, user, pass, http_opts: {ssl_verify_mode: 0})
+
+    # calendar = client.get_folder(:calendar, opts = {act_as: "tomtg-hall@infotech.com"})
+    calendar = client.get_folder(:calendar)
+  end
+
+  def get_folders
+    endpoint = 'https://webmail.infotech.com/ews/Exchange.asmx'
+    user = Rails.application.secrets.exchange_username
+    pass = Rails.application.secrets.exchange_password
+
+    client = Viewpoint::EWSClient.new(endpoint, user, pass, http_opts: {ssl_verify_mode: 0})
+
+    client.folders
   end
 
 end

@@ -27,7 +27,7 @@ Rails.application.routes.draw do
   #   end
 
   resources :events do
-    get :index
+  
   end
 
   # Example resource route with sub-resources:
