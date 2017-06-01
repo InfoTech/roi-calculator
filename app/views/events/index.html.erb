@@ -2,44 +2,43 @@
 <html>
 <head>
   <style type="text/css">
-    a.display-event, a.display-event:visited {
-      color: #00F;
+    div.event-box {
+      border: 1px solid #000 !important;
+      height: 300px;
+      overflow-y: hidden;
     }
   </style>
 </head>
 <body>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $('a.display-event').on('click', function(e) {
-        e.preventDefault();
 
-        var id = $(this).data('body-id');
-        $('#event-body-' + id).toggle();
-      });
-    });
-  </script>
   <h3>Event properties</h4>
   <%= @events[0] %>
   <hr /><br /><br />
 
   <hr /><br /><br />
+  
   <%
-    i = 0
-    @events.each do |event|
-   %>
-    <dt>
-      <a href="#" class="display-event" data-body-id="<%= i %>"><%= event.subject %></a>
-    </dt>
-    <dd>
-      <div style="display: none" id="event-body-<%= i %>">
-        <%= raw event.body %>
-      </div>
-    </dd>
+    if @events.length > 0
+      i = 0
+      @events.each do |event|
+      %>
+        <% if i == 0 %>
+          <div class="row"><div class="col-xs-2"></div>
+        <% elsif i % 2 == 0 %>
+          <div class="col-xs-2"></div></div><div class="row"><div class="col-xs-2"></div>
+        <% end %>
 
-  <%
-    i += 1
-  end
-  %>
-
+        <div class="col-xs-4 event-box">
+          <%= event.start %>
+          <%= raw event.body %>
+        </div>
+        <%
+          i += 1
+        end
+        %>
+        <% if @events.length % 2 == 0 %>
+        </div>
+        <% end %>
+    <% end %>
 </body>
 </html>
