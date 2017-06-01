@@ -21,13 +21,9 @@ class EventsController < ApplicationController
   end
 
   private
+  
   def get_client
-    # https://makandracards.com/makandra/27443-interacting-with-a-microsoft-exchange-server-from-ruby
-    endpoint = 'https://webmail.infotech.com/ews/Exchange.asmx'
-    user = Rails.application.secrets.exchange_username
-    pass = Rails.application.secrets.exchange_password
-
-    client = Viewpoint::EWSClient.new(endpoint, user, pass, http_opts: {ssl_verify_mode: 0})
+    ExchangeClientService.client
   end
 
   def get_calendar
