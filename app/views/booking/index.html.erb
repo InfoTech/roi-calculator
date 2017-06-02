@@ -1,0 +1,29 @@
+<h1>Book an Event</h1>
+
+<% @events.each do |event| %>
+  <p><%= event.subject %>: <%= event.start %></p>
+<% end %>
+
+<hr>
+
+<%= month_calendar(attribute: :start, events: @events) do |date, events| %>
+  <%
+    longest_event = events.map(&:duration_in_seconds).max
+    if longest_event
+      # 18000 seconds = 5 hours
+      style = longest_event >= 18000 ? 'all-day' : 'partial'
+    else
+      style = 'available'
+    end
+  %>
+  <div class="event-block <%= style %>">
+    <div class="date-num"><%= date.strftime("%-d") %></div>
+  </div>
+<!--
+  <% events.each do |event| %>
+   <div>
+     <%= event.subject %>
+   </div>
+ <% end %>
+  -->
+<% end %>
