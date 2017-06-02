@@ -7,21 +7,27 @@ class EventsController < ApplicationController
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  def default
+    today = Date.today
+    redirect_to(
+      action: 'index',
+      slug: 'concert_hall',
+      year: today.year,
+      month: today.month
+    )
+  end
 
   def index
-    calendar = get_calendar
-
-    @events = []
-
-    calendar.items.each do |item|
-      if !item.cancelled?
-        @events << item
-      end
-    end
+    room = ExchangeClientService.find_room(params[:slug].to_sym)
+    @events = ExchangeClientService.events(
+      name: room[:name],
+      year: Integer(params[:year]),
+      month: Integer(params[:month])
+    )
   end
 
   private
-  
+
   def get_client
     ExchangeClientService.client
   end
