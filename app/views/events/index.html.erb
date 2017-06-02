@@ -164,6 +164,27 @@
                         <h2>Book Your Event</h2>
                     </div>
 
+                    <!-- availability calendar -->
+                    <%= month_calendar(attribute: :start, events: @events) do |date, events| %>
+                      <%
+                        longest_event = events.map(&:duration_in_seconds).max
+                        if longest_event
+                          # 18000 seconds = 5 hours
+                          style = longest_event >= 18000 ? 'all-day' : 'partial'
+                        else
+                          style = 'available'
+                        end
+                      %>
+                      <div class="event-block <%= style %>">
+                        <div class="date-num"><%= date.strftime("%-d") %></div>
+                      </div>
+                    <% end %>
+                    <!-- end of calendar -->
+
+
+
+
+
                     <div class="col-lg-12">
                         <h2>Upcoming Events</h2>
 
