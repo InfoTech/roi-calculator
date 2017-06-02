@@ -299,6 +299,10 @@ a:focus {
     background: #FFFFFF url(../img/events-bg.jpg) no-repeat top center scroll;
 }
 
+#events {
+  margin-bottom: 40px;
+}
+
 #events div.event-box {
   border: 1px solid #000 !important;
   height: 300px;
