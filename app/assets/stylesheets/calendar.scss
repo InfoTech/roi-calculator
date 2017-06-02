@@ -1,14 +1,29 @@
 $day-half-width: 50px;
+$color-unavailable: rgba(0, 0, 0, 0.2);
+// $color-available: rgba(255, 255, 255, 0.3);
+$color-available: rgba(255, 255, 255, 0.1);
 
 .simple-calendar {
   table {
     width: auto;
+    margin: auto;
+    border: none !important;
+  }
+  th {
+    text-align: center;
+    border: none !important;
+    padding: 1px !important;
+  }
+  td {
+    border: none !important;
+    padding: 1px !important;
   }
   // bootstrap, go away!
   .table-striped {
     tbody {
-      tr:nth-of-type(odd) {
-        background-color: $white;
+      tr {
+        border: none !important;
+        background: none !important;
       }
     }
   }
@@ -21,16 +36,16 @@ $day-half-width: 50px;
   }
 
   .available {
-    border: $day-half-width solid $white;
+    border: $day-half-width solid $color-available;
   }
   .all-day {
-    border: $day-half-width solid $grey;
+    border: $day-half-width solid $color-unavailable;
   }
   .partial {
-    border-top: $day-half-width solid $grey;
-    border-right: $day-half-width solid transparent;
-    border-bottom: $day-half-width solid transparent;
-    border-left: $day-half-width solid $grey;
+    border-top: $day-half-width solid $color-unavailable;
+    border-right: $day-half-width solid $color-available;
+    border-bottom: $day-half-width solid $color-available;
+    border-left: $day-half-width solid $color-unavailable;
   }
 
   .date-num {
