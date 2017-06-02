@@ -1,0 +1,63 @@
+$day-half-width: 50px;
+
+.simple-calendar {
+  table {
+    width: auto;
+  }
+  // bootstrap, go away!
+  .table-striped {
+    tbody {
+      tr:nth-of-type(odd) {
+        background-color: $white;
+      }
+    }
+  }
+  .event-block {
+    box-sizing: content-box;
+    width: 0;
+    height: 0;
+    position: relative;
+    overflow: visible;
+  }
+
+  .available {
+    border: $day-half-width solid $white;
+  }
+  .all-day {
+    border: $day-half-width solid $grey;
+  }
+  .partial {
+    border-top: $day-half-width solid $grey;
+    border-right: $day-half-width solid transparent;
+    border-bottom: $day-half-width solid transparent;
+    border-left: $day-half-width solid $grey;
+  }
+
+  .date-num {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+  }
+
+  .day {  }
+
+  .wday-0 {}
+  .wday-1 {}
+  .wday-2 {}
+  .wday-3 {}
+  .wday-4 {}
+  .wday-5 {}
+  .wday-6 {}
+
+  .today {}
+  .past {}
+  .future {}
+
+  .start-date {}
+
+  .prev-month {}
+  .next-month { }
+  .current-month {}
+
+  .has-events {}
+}

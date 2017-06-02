@@ -27,9 +27,9 @@ Rails.application.routes.draw do
   #   end
 
   resources :events do
-  
-  end
 
+  end
+  get '/booking/:slug/:year/:month', controller: 'booking', action: 'index'
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
