@@ -1,44 +1,268 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
+<!-- Mirrored from 888yonge.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Jun 2017 20:37:51 GMT -->
 <head>
-  <style type="text/css">
-    div.event-box {
-      border: 1px solid #000 !important;
-      height: 300px;
-      overflow-y: hidden;
-    }
-  </style>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Info-Tech Innovation Center</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!-- <link href="css/bootstrap.min.css" rel="stylesheet"> -->
+
+    <%= stylesheet_link_tag 'css/bootstrap.min' %>
+
+    <!-- Custom CSS -->
+    <!-- <link href="css/grayscale.css" rel="stylesheet"> -->
+
+    <%= stylesheet_link_tag 'css/grayscale' %>
+
+    <!-- Custom Fonts -->
+    <!-- <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <%= stylesheet_link_tag 'font-awesome-4.1.0/css/font-awesome.min' %>
+    <link rel="stylesheet" href="http://s3.amazonaws.com/icomoon.io/32363/DDRIconFont/style.css">
+     <!-- Google Font -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Booking form code -->
+    <script>(function(){var qs,js,q,s,d=document,gi=d.getElementById,ce=d.createElement,gt=d.getElementsByTagName,id='typef_orm',b='https://s3-eu-west-1.amazonaws.com/share.typeform.com/';if(!gi.call(d,id)){js=ce.call(d,'script');js.id=id;js.src=b+'share.js';q=gt.call(d,'script')[0];q.parentNode.insertBefore(js,q)}id=id+'_';if(!gi.call(d,id)){qs=ce.call(d,'link');qs.rel='stylesheet';qs.id=id;qs.href=b+'share-button.css';s=gt.call(d,'head')[0];s.appendChild(qs,s)}})()</script>
+
 </head>
-<body>
 
-  <h3>Event properties</h4>
-  <%= @events[0] %>
-  <hr /><br /><br />
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!-- Book Now Footer -->
+    <div id="footer-tab" class="footer-tab"><a href="https://888yongeinc.typeform.com/to/CWStPw" data-mode="1" target="_blank" class="typeform-share btn btn-default btn-lg"> Book Now</a> <small>or call</small> <span class="lead"> 1-888-670-8889</span></div>
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="page-scroll" href="#page-top">
+                    <img src="img/infotech.png" alt="Info-Tech" />
+                </a>
+            </div>
 
-  <hr /><br /><br />
-
-  <%
-    if @events.length > 0
-      i = 0
-      @events.each do |event|
-      %>
-        <% if i == 0 %>
-          <div class="row"><div class="col-xs-2"></div>
-        <% elsif i % 2 == 0 %>
-          <div class="col-xs-2"></div></div><div class="row"><div class="col-xs-2"></div>
-        <% end %>
-
-        <div class="col-xs-4 event-box">
-          <%= event.start.strftime("%B %Y") %>
-          <%= raw event.body %>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#details">Details</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#rooms">Rooms</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
         </div>
-        <%
-          i += 1
-        end
-        %>
-        <% if @events.length % 2 == 0 %>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <p class="intro-text">Make your event epic at</p>
+                        <h1 class="brand-heading">888 YONGE STREET</h1>
+                        <ul class="list-inline banner-social-buttons">
+                            <li>
+                                <a href="https://888yongeinc.typeform.com/to/CWStPw" data-mode="1" target="_blank" class="typeform-share btn btn-default btn-lg"> Book Now</a>
+                            </li>
+                            <li>
+                                <a href="#details" class="page-scroll btn btn-default btn-lg"> <span class="network-name">Details</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-        <% end %>
-    <% end %>
-</body>
+    </header>
+
+
+
+    <!-- Details Section -->
+    <section id="details" class="content-section text-center concert-hall-bg">
+        <div class="concert-hall-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2>A world-class venue for inspiring corporate events.</h2>
+                        <div class="row">
+                            <div class="col-xs-6 col-md-3">
+                                <div class="thumbnail">
+                                    <div class="circle">
+                                        <i class="di-meetings-banquets fa-4x"></i>
+                                    </div>
+                                    <br>
+                                    Annual Meetings &amp; Banquets
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-md-3">
+                                <div class="thumbnail">
+                                    <div class="circle">
+                                        <i class="di-corporate-training fa-4x"></i>
+                                    </div>
+                                    <br>
+                                    Corporate Training
+                                </div>
+                            </div>
+                            <!-- Add the extra clearfix for only the required viewport -->
+                            <div class="clearfix visible-xs-block"></div>
+                             <div class="col-xs-6 col-md-3">
+                                <div class="thumbnail">
+                                    <div class="circle">
+                                        <i class="di-association-meetings fa-4x"></i>
+                                    </div>
+                                    <br>
+                                    Association Meetings
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-md-3">
+                                <div class="thumbnail">
+                                    <div class="circle">
+                                        <i class="di-meetings-events fa-4x"></i>
+                                    </div>
+                                    <br>
+                                    Company Meetings &amp; Events
+                                </div>
+                            </div>
+                            <!-- Add the extra clearfix for only the required viewport -->
+                            <div class="clearfix visible-xs-block"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6 col-md-3">
+                                <div class="thumbnail">
+                                    <div class="circle film">
+                                        <i class="di-films fa-4x"></i>
+                                    </div>
+                                    <br>
+                                    Films &amp; TV Production
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-md-3">
+                                <div class="thumbnail">
+                                    <div class="circle">
+                                        <i class="di-video fa-4x"></i>
+                                    </div>
+                                    <br>
+                                    Video Production
+                                </div>
+                            </div>
+                            <!-- Add the extra clearfix for only the required viewport -->
+                            <div class="clearfix visible-xs-block"></div>
+                             <div class="col-xs-6 col-md-3">
+                                <div class="thumbnail">
+                                    <div class="circle">
+                                        <i class="di-seminars fa-4x"></i>
+                                    </div>
+                                    <br>
+                                    Seminars
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-md-3">
+                                <div class="thumbnail">
+                                    <div class="circle">
+                                        <i class="di-team-building fa-4x"></i>
+                                    </div>
+                                    <br>
+                                    Team-building Workshops
+                                </div>
+                            </div>
+                            <!-- Add the extra clearfix for only the required viewport -->
+                            <div class="clearfix visible-xs-block"></div>
+                        </div>
+                        <a href="#rooms" class="page-scroll btn btn-default btn-lg"> <span class="network-name">Rooms</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms" class="content-section text-center rooms-bg">
+        <div class="rooms-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2>Reserve your space in this six-story heritage building in the heart of Toronto.</h2>
+                        <div class="row">
+                            <div class="col-xs-12 col-md-4">
+                                <div class="thumbnail">
+                                    <img class="img-thumbnail" src="img/room-concert-hall.jpg" alt="The Concert Hall" />
+                                    <br>
+                                    <h3>The Concert Hall</h3>
+                                    <p>
+                                        Adaptable to small or large groups, the Concert Hall features a large stage for presentations and generous floor space with numerous seating and table service options.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-4">
+                                <div class="thumbnail">
+                                    <img class="img-thumbnail" src="img/room-white.jpg" alt="The White Room" />
+                                    <br>
+                                    <h3>The White Room</h3>
+                                    <p>
+                                        An inspiring space for corporate training or workshops. Write on the walls, or even the floor.
+                                    </p>
+                                </div>
+                            </div>
+                             <div class="col-xs-12 col-md-4">
+                                <div class="thumbnail">
+                                    <img class="img-thumbnail" src="img/room-red.jpg" alt="The Red Room" />
+                                    <br>
+                                    <h3>The Red Room</h3>
+                                    <p>
+                                        A charming heritage venue, with orginal woodwork, ideal for receptions.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery Version 1.11.0 -->
+    <!-- <script src="js/jquery-1.11.0.js"></script> -->
+    <%= javascript_include_tag "js/jquery-1.11.0" %>
+
+    <!-- Bootstrap Core JavaScript -->
+    <!-- <script src="js/bootstrap.min.js"></script> -->
+    <%= javascript_include_tag "js/bootstrap.min" %>
+
+    <!-- Plugin JavaScript -->
+    <!-- <script src="js/jquery.easing.min.js"></script> -->
+    <%= javascript_include_tag "js/jquery.easing.min" %>
+
+    <!-- Custom Theme JavaScript -->
+    <!-- <script src="js/grayscale.js"></script> -->
+    <%= javascript_include_tag "js/grayscale" %>
+
+
+  </body>
+
+
+<!-- Mirrored from 888yonge.com/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 01 Jun 2017 20:38:05 GMT -->
 </html>
