@@ -15,7 +15,8 @@
 
         <div class="col-xs-4 event-box">
           <%= event.start.strftime("%B %Y") %>
-          <%= raw event.body %>
+
+          <%= ActionView::Base.full_sanitizer.sanitize(event.body, :tags => %w(style)) %>
         </div>
         <%
           i += 1
