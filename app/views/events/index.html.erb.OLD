@@ -2,11 +2,30 @@
 <html>
 <head>
   <style type="text/css">
-    div.event-box {
-      border: 1px solid #000 !important;
-      height: 300px;
-      overflow-y: hidden;
-    }
+  <%
+    if @events.length > 0
+      i = 0
+      @events.each do |event|
+      %>
+        <% if i == 0 %>
+          <div class="row"><div class="col-xs-2"></div>
+        <% elsif i % 2 == 0 %>
+          <div class="col-xs-2"></div></div><div class="row"><div class="col-xs-2"></div>
+        <% end %>
+
+        <div class="col-xs-4 event-box">
+          <%= event.start.strftime("%B %Y") %>
+
+          <%= ActionView::Base.full_sanitizer.sanitize(event.body, :tags => %w(style)) %>
+        </div>
+        <%
+          i += 1
+        end
+        %>
+        <% if @events.length % 2 == 0 %>
+        </div>
+        <% end %>
+    <% end %>
   </style>
 </head>
 <body>
