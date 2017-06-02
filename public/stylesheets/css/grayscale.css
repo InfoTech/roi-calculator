@@ -247,7 +247,7 @@ a:focus {
     -moz-animation-timing-function: linear;
 }
 
-@-webkit-keyframes pulse {    
+@-webkit-keyframes pulse {
     0 {
         -webkit-transform: scale(1);
         transform: scale(1);
@@ -264,7 +264,7 @@ a:focus {
     }
 }
 
-@-moz-keyframes pulse {    
+@-moz-keyframes pulse {
     0 {
         -moz-transform: scale(1);
         transform: scale(1);
@@ -293,6 +293,10 @@ a:focus {
 
 .rooms-bg {
     background: url(../img/street-view.jpg) no-repeat bottom center scroll;
+}
+
+.events-bg {
+    background: #FFFFFF url(../img/events-bg.jpg) no-repeat top center scroll;
 }
 
 .concert-hall-bg {
@@ -348,14 +352,14 @@ a:focus {
 }
 
 .footer-tab {
-    display:none; 
-    position:fixed; 
-    bottom:0px; 
-    right:0px; 
-    left: 0px; 
-    padding: 10px; 
-    text-align: center; 
-    background-color:#192B39; 
+    display:none;
+    position:fixed;
+    bottom:0px;
+    right:0px;
+    left: 0px;
+    padding: 10px;
+    text-align: center;
+    background-color:#192B39;
     z-index: 999
 }
 
@@ -402,11 +406,11 @@ body {
 /* Marketo Styles */
 
 .mktoLabel, .mktoField {
-    font-family: 'Roboto',"Helvetica Neue",Helvetica,Arial,sans-serif!important;  
+    font-family: 'Roboto',"Helvetica Neue",Helvetica,Arial,sans-serif!important;
 }
 
 .mktoLabel {
-    color: white;  
+    color: white;
 }
 
 .mktoField, .mktoButton {
@@ -424,6 +428,3 @@ form {
 .ui-datepicker-month, .ui-datepicker-year {
   color: #000!important;
 }
-
-
-
