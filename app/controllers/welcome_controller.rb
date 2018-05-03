@@ -2,7 +2,7 @@ require 'viewpoint'
 require 'time'
 include Viewpoint::EWS
 
-class EventsController < ApplicationController
+class WelcomeController < ApplicationController
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
@@ -18,12 +18,8 @@ class EventsController < ApplicationController
   end
 
   def index
-    room = ExchangeClientService.find_room(params[:slug].to_sym)
-    @events = ExchangeClientService.events(
-      name: room[:name],
-      year: Integer(params[:year]),
-      month: Integer(params[:month])
-    )
+    #room = ExchangeClientService.find_room(params[:slug].to_sym)
+    @events = []
   end
 
   private
@@ -33,10 +29,10 @@ class EventsController < ApplicationController
   end
 
   def get_calendar
-    client = get_client
+    #client = get_client
 
     #calendar = client.get_folder(:calendar, opts = {act_as: "tomtg-hall@infotech.com"})
-    calendar = client.get_folder(:calendar)
+    #calendar = client.get_folder(:calendar)
   end
 
   # def get_availability
