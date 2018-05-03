@@ -1,17 +1,15 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
-#
+# MySQL versions 5.6 required (5.7 will not work)
 default: &default
-  adapter: sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: mysql2
+  encoding: utf8
+  host: 127.0.0.1
+  username: root
+  password:
+  pool: 30
 
 development:
   <<: *default
-  database: db/development.sqlite3
+  database: roi_development
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
