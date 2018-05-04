@@ -4,6 +4,7 @@ class WelcomeController < ApplicationController
   protect_from_forgery with: :exception
 
   def index
+    @measured_values = MeasuredValue.all
   end
 
   private
