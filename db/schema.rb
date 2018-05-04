@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180504144755) do
+ActiveRecord::Schema.define(version: 20180504163134) do
 
   create_table "experience_types", force: :cascade do |t|
     t.string "name",          limit: 255
@@ -28,23 +28,13 @@ ActiveRecord::Schema.define(version: 20180504144755) do
   add_index "experiences", ["experience_type_id"], name: "fk_rails_1bb089c54a", using: :btree
   add_index "experiences", ["experience_types_id"], name: "index_experiences_on_experience_types_id", using: :btree
 
-  create_table "experiences_mv_aggregated", force: :cascade do |t|
-    t.integer "experience_type_id",    limit: 4
-    t.string  "name",                  limit: 255
-    t.string  "display_name",          limit: 255
-    t.integer "average_days_saved",    limit: 4
-    t.integer "average_dollars_saved", limit: 4
-  end
-
-  add_index "experiences_mv_aggregated", ["experience_type_id"], name: "fk_rails_1bb089c54a", using: :btree
-
   create_table "measured_value_aggregations", force: :cascade do |t|
     t.integer "experience_type_id",    limit: 4
     t.integer "experience_types_id",   limit: 4
     t.string  "name",                  limit: 255
     t.string  "display_name",          limit: 255
-    t.integer "average_days_saved",    limit: 4
-    t.integer "average_dollars_saved", limit: 4
+    t.decimal "average_days_saved",                precision: 10, scale: 2
+    t.decimal "average_dollars_saved",             precision: 10, scale: 2
   end
 
   add_index "measured_value_aggregations", ["experience_type_id"], name: "fk_rails_5db9aa144b", using: :btree
@@ -67,7 +57,6 @@ ActiveRecord::Schema.define(version: 20180504144755) do
   add_index "measured_values", ["experiences_id"], name: "index_measured_values_on_experiences_id", using: :btree
 
   add_foreign_key "experiences", "experience_types"
-  add_foreign_key "experiences_mv_aggregated", "experience_types", name: "fk_rails_1bb089c54a_copy"
   add_foreign_key "measured_value_aggregations", "experience_types"
   add_foreign_key "measured_values", "experiences"
 end
