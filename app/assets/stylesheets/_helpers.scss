@@ -1,5 +1,4 @@
 .img-container {
-  border: 1px dashed violet;
   position: relative;
   overflow: hidden;
 
@@ -9,9 +8,12 @@
   }
 }
 
+.width-100p {
+  width: 100%;
+}
+
 
 // List Stuffs
-
 .list-style-none {
   list-style-type: none;
   padding: 0;
