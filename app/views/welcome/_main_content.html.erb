@@ -42,7 +42,7 @@
     <div class="dropdown gutter-bottom">
       <select id="input-tags" class="form-control dropdown-experience-type">
         <% @measured_value_aggregations.includes(:experience_type).where(experience_types: {name: 'Diagnostic'}).each do |mva| %>
-          <option id="experience-<%= mva.id %>"><%= mva.display_name %></option>
+          <option data-experience-id="<%= mva.id %>" id="experience-<%= mva.id %>"><%= mva.display_name %></option>
         <% end %>
       </select>
     </div>
@@ -70,7 +70,7 @@
     <div class="dropdown gutter-bottom">
       <select id="input-tags" class="form-control dropdown-experience-type">
         <% @measured_value_aggregations.includes(:experience_type).where(experience_types: {name: 'Workshop'}).each do |mva| %>
-          <option id="experience-<%= mva.id %>"><%= mva.display_name %></option>
+          <option data-experience-id="<%= mva.id %>" id="experience-<%= mva.id %>"><%= mva.display_name %></option>
         <% end %>
       </select>
     </div>
@@ -98,7 +98,7 @@
     <div class="dropdown gutter-bottom">
       <select id="input-tags" class="form-control dropdown-experience-type">
         <% @measured_value_aggregations.includes(:experience_type).where(experience_types: {name: 'GI'}).each do |mva| %>
-          <option id="experience-<%= mva.id %>"><%= mva.display_name %></option>
+          <option data-experience-id="<%= mva.id %>" id="experience-<%= mva.id %>"><%= mva.display_name %></option>
         <% end %>
       </select>
     </div>
