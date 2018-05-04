@@ -1,3 +1,24 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        $dropdowns = $('select.dropdown-experience-type');
+        
+        $dropdowns.change(function() {
+            $dropdown = $(this);
+            $selection = $dropdown.find("option:selected");
+            $ul_container = $dropdown.parent().siblings('ul.diagnostic-results');
+
+            alert('#info-' + $selection.attr('id'));
+
+            $experience = $ul_container.find('#info-' + $selection.attr('id'))
+            if($experience.length == 0)
+            {
+                $experience = $('<li id="info-' + $selection.attr('id') + '"><p class="heading-1">1. Optimize Change Management</p><p class="highlight-text">Average Amount Saved: $10,000</p></li>');
+                $ul_container.append($experience);
+            }
+        });
+    });
+</script>
+
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
     <header>
         <div class="container-fluid">
