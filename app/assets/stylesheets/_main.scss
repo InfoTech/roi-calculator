@@ -1,0 +1,55 @@
+#main {
+  padding-top: 100px;
+}
+
+
+
+#main-content {
+  article {
+    img {
+      display: block;
+      min-height: 80px;
+      background: black;
+    }
+
+    p {
+      color: black;
+      line-height: 1.2;
+    }
+  }
+
+  .results-box {
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .diagnostic-results {
+    border-bottom: 5px solid black;
+    list-style-type: none;
+    padding: 0;
+    li {
+      padding: 10px 0;
+      border-bottom: 1px solid #F2F2F2;
+      position: relative;
+
+      &:after {
+        content: 'f057';
+        font-family: font-awesome;  
+        position: absolute;
+        right: 0;
+        top: 10px;
+      }
+    }
+  }
+
+
+}
+
+
+
+#sidebar {
+  .sidebar-wrapper {
+    background: #F2F2F2;
+  }
+}

@@ -1,0 +1,34 @@
+
+.fw-light { font-weight: 400; }
+
+.fw-thin { font-weight: $fw-thin; }
+.fw-extralight { font-weight: $fw-extralight; }
+.fw-light { font-weight: $fw-light; }
+.fw-regular { font-weight: $fw-regular; }
+.fw-medium { font-weight: $fw-medium; }
+.fw-semibold { font-weight: $fw-semibold; }
+.fw-bold { font-weight: $fw-bold; }
+.fw-extrabold { font-weight: $fw-extrabold; }
+.fw-black { font-weight: $fw-black; }
+
+.lead {
+font-family: 'Roboto Slab',"Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.section-heading {
+  color: #A2A2A2;
+}
+
+
+.heading-1 {
+  font-family: "Montserrat", sans-serif !important;
+  font-weight: $fw-bold;
+  color: #4A4A4A;
+  font-size: 20px;
+}
+
+
+.highlight-text {
+  font-family: "Montserrat", sans-serif !important;
+  color: #2477B8;
+}

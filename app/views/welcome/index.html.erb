@@ -1,6 +1,5 @@
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-    <!-- Book Now Footer -->
-    <div id="footer-tab" class="footer-tab"><a href="https://888yongeinc.typeform.com/to/CWStPw" data-mode="1" target="_blank" class="typeform-share btn btn-default btn-lg"> Book Now</a> <small>or call</small> <span class="lead"> 1-888-670-8889</span></div>
+    
     <!-- Navigation -->
     <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
         <div class="container">
@@ -8,9 +7,12 @@
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
                     <i class="fa fa-bars"></i>
                 </button>
-                <a class="page-scroll" href="#page-top">
-                  <%= image_tag "infotech.png" %>
-                </a>
+                <div class="img-container">
+                    <a class="page-scroll" href="#page-top">
+                        <%= image_tag "itrg-logo-flat-blue.png" %>
+                    </a>
+                </div>
+                
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -21,33 +23,25 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#details">Details</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#rooms">Rooms</a>
-                    </li>
-                    <li>
-                      <a class="page-scroll" href="#events">Events</a>
+                      <a class="page-scroll" href="#events">Team</a>
                     </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
     </nav>
 
     <!-- Main Content -->
-    <main>
-        <div class="container">
+    <main id="main">
+        <div class="container-fluid">
             <div class="row">
-                <div class="col-md-8"></div>
-                <div class="col-md-4"></div>
+                <%= render 'welcome/main_content' %>
+                <%= render 'welcome/sidebar' %>
             </div>
         </div>
     </main>
+
     
-
-
     <!-- jQuery Version 1.11.0 -->
     <!-- <script src="js/jquery-1.11.0.js"></script> -->
     <%= javascript_include_tag "js/jquery-1.11.0" %>
@@ -63,6 +57,5 @@
     <!-- Custom Theme JavaScript -->
     <!-- <script src="js/grayscale.js"></script> -->
     <%= javascript_include_tag "js/grayscale" %>
-
 
   </body>

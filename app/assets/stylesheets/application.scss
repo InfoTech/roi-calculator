@@ -14,6 +14,12 @@
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "elements";
 @import "variables";
+@import "typography";
+@import "animations";
+@import "helpers";
+@import "spacing";
 @import "layout";
-@import "calendar";
+@import "main";
+
