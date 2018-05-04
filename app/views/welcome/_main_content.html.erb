@@ -93,11 +93,9 @@
     <h4 class="section-heading">Search Diagnostics</h4>
     <div class="dropdown gutter-bottom">
       <select id="input-tags" class="form-control">
-        <option>Optimize Change Management</option>
-        <option>Optimize Change Management</option>
-        <option>Optimize Change Management</option>
-        <option>Optimize Change Management</option>
-        <option>Optimize Change Management</option>
+        <% @measured_value_aggregations.includes(:experience_type).where(experience_types: {name: 'GI'}).each do |mva| %>
+          <option><%= mva.display_name %></option>
+        <% end %>
       </select>
     </div>
 
