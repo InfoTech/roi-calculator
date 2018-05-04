@@ -17,6 +17,7 @@
 
             if($experience.length == 0)
             {
+                // append below dropdown
                 counter = $ul_container.find('li').length + 1;
 
                 $experience_data_item = experience_data[$selection.data('experience-id')];
@@ -24,6 +25,11 @@
 
                 $experience = $('<li id="info-' + $selection.attr('id') + '"><p class="heading-1">' + counter + '. ' + $experience_data_item.display_name + '</p><p class="highlight-text">Average Amount Saved: $' + $experience_data_item.average_dollars_saved + '</p></li>');
                 $ul_container.append($experience);
+
+                // append to sidebar
+                $sidebar = $('ul#selected-' + $dropdown.data('experience-type') + '-list');
+                $sidebar_experience = $('<li id="info-' + $selection.attr('id') + '">' + $experience_data_item.display_name + '</li>');
+                $sidebar.append($sidebar_experience);
 
                 // recompute sums
                 $sum_of_roi.text('$' + roi_sum);

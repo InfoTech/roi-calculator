@@ -40,7 +40,7 @@
 
     <h4 class="section-heading">Search Diagnostics</h4>
     <div class="dropdown gutter-bottom">
-      <select id="input-tags" class="form-control dropdown-experience-type">
+      <select id="input-tags" class="form-control dropdown-experience-type" data-experience-type="diagnostic">
         <% @measured_value_aggregations.includes(:experience_type).where(experience_types: {name: 'Diagnostic'}).each do |mva| %>
           <option data-experience-id="<%= mva.id %>" id="experience-<%= mva.id %>"><%= mva.display_name %></option>
         <% end %>
@@ -68,7 +68,7 @@
     
     <h4 class="section-heading">Search Diagnostics</h4>
     <div class="dropdown gutter-bottom">
-      <select id="input-tags" class="form-control dropdown-experience-type">
+      <select id="input-tags" class="form-control dropdown-experience-type" data-experience-type="workshop">
         <% @measured_value_aggregations.includes(:experience_type).where(experience_types: {name: 'Workshop'}).each do |mva| %>
           <option data-experience-id="<%= mva.id %>" id="experience-<%= mva.id %>"><%= mva.display_name %></option>
         <% end %>
@@ -96,7 +96,7 @@
     
     <h4 class="section-heading">Search Diagnostics</h4>
     <div class="dropdown gutter-bottom">
-      <select id="input-tags" class="form-control dropdown-experience-type">
+      <select id="input-tags" class="form-control dropdown-experience-type" data-experience-type="gi">
         <% @measured_value_aggregations.includes(:experience_type).where(experience_types: {name: 'GI'}).each do |mva| %>
           <option data-experience-id="<%= mva.id %>" id="experience-<%= mva.id %>"><%= mva.display_name %></option>
         <% end %>
