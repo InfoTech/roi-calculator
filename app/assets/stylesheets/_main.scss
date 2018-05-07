@@ -12,6 +12,12 @@
     }
   }
 
+  .client-header {
+    padding: 5px 10px;
+    width: 100%;
+    font-size: 18px;
+  }
+
   .results-box {
     &:last-child {
       border-bottom: none;
@@ -38,7 +44,6 @@
     }
   }
 }
-
 
 #sidebar {
   h4 {
